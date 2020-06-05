@@ -1,24 +1,19 @@
 <template>
   <div class="content">
-    <cell-group>
-      <cell title="单元格" value="内容" />
-      <cell title="单元格" value="内容" label="描述信息" />
-    </cell-group>
+    <van-cell-group>
+      <van-cell title="单元格" value="内容" />
+      <van-cell title="单元格" value="内容" label="描述信息" />
+    </van-cell-group>
   </div>
 </template>
 
-<script>
-import { Cell, CellGroup } from 'vant'
-export default {
-  components:{
-    Cell,
-    CellGroup
-  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+<script lang='ts'>
+import { Vue, Component } from 'vue-property-decorator'
+
+
+@Component
+export default class HelloWorld extends Vue {
+  
 }
 </script>
 
