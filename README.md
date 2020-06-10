@@ -4,12 +4,19 @@
 
 ##项目名称
 ``` bash
-> xxx项目
+ xxx项目
 ```
 
 ##项目启动说明
-``` javascript
-// 数字城管
+> XXXX模块
+``` bash
+    路由入口：`/cityManage`
+    入口参数：
+      - name:用户名（加密）
+      - token:请求认证码（请求http://xxx.xxx.xxx:xxxx/xxx获取）
+      - xxx:xxx
+
+> XXXX模块
 
 ```
 
