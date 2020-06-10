@@ -8,7 +8,8 @@
       @click-left="onClickLeft"
       @click-right="onClickRight"
     />
-    <List :info='list'></List>
+    <div @click='cm.add'>{{cm.doubleCount}}</div>
+    <List :info='list' @getlist='getlist'></List>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import { Vue, Component } from "vue-property-decorator";
 import List from '../../components/List.vue'
 import { ListObj } from '../../model/index'
 import { getUsers } from '../../api/index'
+import CounterMobule from '../../vuex/counter'
 
 @Component({
   components: {
@@ -33,16 +35,21 @@ export default class Home extends Vue {
     title: "年龄",
     value: ""
   }]
-
+  get cm() {
+    return CounterMobule
+  }
   created(){
     getUsers().then((res:any) => {
       this.list = res
     })
   }
   onClickLeft() {
-    this.$toast("成功文案");
+    // this.$toast("成功文案");
   }
   onClickRight() {
+  }
+  getlist() {
+    debugger
   }
 }
 </script>
