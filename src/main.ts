@@ -6,7 +6,7 @@ import router from './router/index'
 import store from './vuex/index'
 import 'amfe-flexible'
 import './utils/tools'
-import './utils/vant'
+import './utils/vant.js'
 
 Vue.config.productionTip = false
 

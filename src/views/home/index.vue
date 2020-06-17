@@ -17,7 +17,7 @@
 import { Vue, Component } from "vue-property-decorator";
 import List from '../../components/List.vue'
 import { ListObj } from '../../model/index'
-import { getUsers } from '../../api/index'
+import { getInfo } from '../../api/index'
 import CounterMobule from '../../vuex/counter'
 
 @Component({
@@ -28,18 +28,12 @@ import CounterMobule from '../../vuex/counter'
 export default class Home extends Vue {
   val:string = 'aaaaa'
   title:string = 'XX项目'
-  list:ListObj[] = [{
-    title: "姓名",
-    value: "张三"
-  }, {
-    title: "年龄",
-    value: ""
-  }]
+  list:ListObj[] = []
   get cm() {
     return CounterMobule
   }
   created(){
-    getUsers().then((res:any) => {
+    getInfo().then((res:any) => {
       this.list = res
     })
   }

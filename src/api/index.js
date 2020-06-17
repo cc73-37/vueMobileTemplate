@@ -5,9 +5,9 @@ import fetch from '../utils/fecth'
  */
 
 // 获取信息
-export function getUsers() {
+export function getInfo() {
   return fetch({
-    url: `/api/users`,
+    url: `/api/getInfo`,
     method: 'get'
   })
 }
