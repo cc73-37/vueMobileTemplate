@@ -7,27 +7,12 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Vue, Component, Prop, Emit } from 'vue-property-decorator'
-@Component
-export default class List extends Vue {
-  @Prop({ type: Array })
-  info!: object[] 
-  
-  // 类computed(计算属性)
-  get abc() {
-    return this.info
+<script>
+  export default {
+    props:['info'],
   }
-
-  @Emit()
-  getlist() {
-    return ;
-  }
-}
 </script>
 
-<style lang='scss' scoped>
-.content{
-  
-}
+<style lang="scss" scoped>
+
 </style>
