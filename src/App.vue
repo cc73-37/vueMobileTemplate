@@ -1,27 +1,24 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<script lang='ts'>
-import { Vue, Component } from 'vue-property-decorator'
-@Component
-export default class App extends Vue {
-
-}
+<script>
+export default {};
 </script>
 
 <style lang='scss'>
-html,body{
-  margin:0;
-  padding:0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // color: #2c3e50;
-  height:100vh;
+  height: 100vh;
+  font-size: 14px;
 }
 </style>

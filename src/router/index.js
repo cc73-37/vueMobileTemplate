@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-
 Vue.use(Router)
 
-export default new Router({
-  routes: [{
-    path: '/',
-    name: 'HelloWorld',
-    component: require('@/components/HelloWorld').default
-  }]
+let routes = [];
+routes = routes.concat(require('../views/home/router').default)  // 首页
+routes = routes.concat(require('../views/user/router').default)  // 用户
+let router = new Router({
+  routes
 })
+
+export default router
