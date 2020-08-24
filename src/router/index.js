@@ -3,8 +3,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 let routes = [];
-routes = routes.concat(require('../views/home/router').default)  // Ê×Ò³
-routes = routes.concat(require('../views/user/router').default)  // ÓÃ»§
+routes = routes.concat(require('../views/home/router').default)  // é¦–é¡µ
+routes = routes.concat(require('../views/user/router').default)  // ç”¨æˆ·
 let router = new Router({
   routes
 })
