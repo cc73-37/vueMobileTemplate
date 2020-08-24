@@ -8,7 +8,8 @@ import * as actions from './actions.js'
 Vue.use(Vuex)
 
 const state = {
-  info:{a:1}
+  info:{a:1},
+  showLoading:false
 }
 
 const store = new Vuex.Store({

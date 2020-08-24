@@ -1,7 +1,7 @@
 import axios from 'axios'
+import store from '../store'
 // import Vue from 'vue'
 const service = axios.create({
-  // baseURL: process.env.BASE_URL, // api的base_url
   timeout: 30000, // 请求超时时间
   headers: {
     'Content-Type': 'application/json;charset=UTF-8'
@@ -10,8 +10,8 @@ const service = axios.create({
 
 // 拦截请求
 service.interceptors.request.use(config => {
-
   let token = sessionStorage.token
+  store.state.showLoading = true
   if (token) {
     config.headers['Authorization'] = token
   }
@@ -21,9 +21,11 @@ service.interceptors.request.use(config => {
 // 拦截响应
 service.interceptors.response.use(
   response => {
+    store.state.showLoading = false
     return response.data
   },
   error => {
+    store.state.showLoading = false
     return Promise.reject(error)
   }
 )

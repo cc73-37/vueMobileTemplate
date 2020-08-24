@@ -13,7 +13,7 @@
 
 <script>
   import List from '../../components/List.vue'
-  import { getUsers } from '../../api/index'
+  import { getInfo } from '../../api/index'
   export default {
     components:{
       List
@@ -32,8 +32,8 @@
       }
     },
     created(){
-      getUsers().then(res => {
-        this.list = res
+      getInfo().then(res => {
+        this.list = res.data
       })
     },
     methods: {

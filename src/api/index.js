@@ -7,7 +7,7 @@ import fetch from '../utils/fecth'
 // 获取信息
 export function getInfo() {
   return fetch({
-    url: `/api/getInfo`,
+    url: `/data/getInfo`,
     method: 'get'
   })
 }
