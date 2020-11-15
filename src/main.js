@@ -8,6 +8,12 @@ import 'vant/lib/index.css';
 import './utils/tools'
 Vue.use(Vant)
 
+
+if (process.env.NODE_ENV !== 'production') {
+  let vConsole = require('vconsole')
+  new vConsole()
+}
+
 Vue.config.productionTip = false
 
 new Vue({

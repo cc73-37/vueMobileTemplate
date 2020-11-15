@@ -8,18 +8,25 @@
       @click-right="onClickRight"
     />
     <List :info='list'></List>
+    <popPicker v-model="show" :columns='["a","b","c"]' @confirm='onConfirm' @cancel='show=false'>
+      <van-cell title="单元格" value="内容" @click='onClick' />
+    </popPicker>
   </div>
 </template>
 
 <script>
   import List from '../../components/List.vue'
+  import popPicker from '../../components/PopPicker'
   import { getInfo } from '../../api/index'
   export default {
+    props:['value'],
     components:{
-      List
+      List,
+      popPicker
     },
     data() {
       return {
+        show:false,
         val:'aaaa',
         title:'XX项目',
         list:[{
@@ -37,6 +44,12 @@
       })
     },
     methods: {
+      onClick(){
+        this.show = true
+      },
+      onConfirm(val){
+        console.log("val:",val)
+      },
       onClickLeft() {
         this.$toast('成功文案')
       },
